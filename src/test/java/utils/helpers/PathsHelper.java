@@ -4,7 +4,6 @@ import lombok.experimental.UtilityClass;
 
 /**
  * <p>Stores all the resource paths as public constants.</p>
- * <p>Use this class to avoid hardcoded paths in the code.</p>
  */
 @UtilityClass
 public class PathsHelper {
