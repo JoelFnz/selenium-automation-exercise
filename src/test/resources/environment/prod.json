@@ -1,3 +1,4 @@
 {
-  "host": "https://automationexercise.com/"
+  "host": "https://automationexercise.com/",
+  "implicitWait": 5
 }
