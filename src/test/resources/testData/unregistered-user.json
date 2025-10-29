@@ -1,0 +1,18 @@
+{
+  "username": "JohnDoe12",
+  "email": "JhonDoe.1999@example.com",
+  "signupInfo": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "dateOfBirth": "1999-09-10",
+    "genderTitle": "MALE",
+    "password": "ship.duck.2001",
+    "company": "Example",
+    "address": "Example 123",
+    "country": "UNITED_STATES",
+    "state": "California",
+    "city": "New York",
+    "phoneNumber": "+54 1123 4212",
+    "zipcode": "23412-4423"
+  }
+}
