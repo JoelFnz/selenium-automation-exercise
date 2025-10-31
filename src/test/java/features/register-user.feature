@@ -3,9 +3,6 @@ Feature: Register User
   I want to create an account
   to gain access to the application
 
-  Background:
-    Given I am on the main page
-
   Scenario: Successful Register
     When I click the Signup-Login button
     Then the New User Signup! form should be visible
