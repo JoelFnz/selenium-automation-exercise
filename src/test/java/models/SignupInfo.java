@@ -10,7 +10,6 @@ import java.time.LocalDate;
 @Getter
 @NoArgsConstructor
 public class SignupInfo {
-    private String password;
     private String dateOfBirth;
     private String firstName;
     private String lastName;

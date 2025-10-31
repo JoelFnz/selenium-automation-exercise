@@ -8,13 +8,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import org.testng.Assert;
 
-
 public class MainPage extends LoadableComponent<MainPage> {
     private final WebDriver driver;
     @FindBy(id = "slider-carousel")
     private WebElement carousel;
     @FindBy(xpath = "//a[@href='/login']")
     private WebElement loginLink;
+    @FindBy(xpath = "//a[@href='/logout']")
+    private WebElement logoutLink;
     @FindBy(xpath = "//a[@href='/delete_account']")
     private WebElement deleteAccountLink;
     @FindBy(xpath = "//a[contains(text(), 'Logged in as')]")
@@ -35,8 +36,21 @@ public class MainPage extends LoadableComponent<MainPage> {
         deleteAccountLink.click();
     }
 
+    @Step("Click the logout link")
+    public void clickLogoutLink() {
+        logoutLink.click();
+    }
+
     public boolean isLoggedInAsUsernameVisible() {
         return loggedInAsUsernameLbl.isDisplayed();
+    }
+
+    public boolean isLogoutLinkDisplayed() {
+        return logoutLink.isDisplayed();
+    }
+
+    public boolean isCarouselDisplayed() {
+        return carousel.isDisplayed();
     }
 
     @Override
@@ -45,6 +59,6 @@ public class MainPage extends LoadableComponent<MainPage> {
 
     @Override
     protected void isLoaded() throws Error {
-        Assert.assertTrue(carousel.isDisplayed(), "Carousel is not displayed");
+        Assert.assertTrue(isCarouselDisplayed(), "Carousel is not displayed");
     }
 }

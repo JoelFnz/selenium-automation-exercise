@@ -19,6 +19,12 @@ public class LoginPage extends LoadableComponent<LoginPage> {
     private WebElement signupBtn;
     @FindBy(xpath = "//p[contains(@style,'color: red')]")
     private WebElement errorMessage;
+    @FindBy(xpath = "//input[@data-qa='login-email']")
+    private WebElement loginEmail;
+    @FindBy(xpath = "//input[@data-qa='login-password']")
+    private WebElement loginPassword;
+    @FindBy(xpath = "//button[@data-qa='login-button']")
+    private WebElement loginBtn;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -35,9 +41,24 @@ public class LoginPage extends LoadableComponent<LoginPage> {
         PageUtils.clearAndType(signupEmail, email);
     }
 
+    @Step("Clear and type login email")
+    public void typeLoginEmail(String email) {
+        PageUtils.clearAndType(loginEmail, email);
+    }
+
+    @Step("Clear and type login password")
+    public void typeLoginPassword(String password) {
+        PageUtils.clearAndType(loginPassword, password);
+    }
+
     @Step("Click submit signup button")
     public void submitSignup() {
         PageUtils.scrollAndClick(signupBtn, driver);
+    }
+
+    @Step("Click submit login button")
+    public void submitLogin() {
+        PageUtils.scrollAndClick(loginBtn, driver);
     }
 
     public boolean isErrorMessageDisplayed() {
@@ -48,8 +69,8 @@ public class LoginPage extends LoadableComponent<LoginPage> {
         return signupBtn.isDisplayed();
     }
 
-    public String getErrorMessageText() {
-        return errorMessage.getText();
+    public boolean isLoginFormDisplayed() {
+        return loginBtn.isDisplayed();
     }
 
     @Override
