@@ -11,6 +11,7 @@ public class ParamTypes {
         return switch (userStatus.toLowerCase()) {
             case "unregistered" -> UserInfoReader.getUnregisteredUser();
             case "registered" -> UserInfoReader.getRegisteredUser();
+            case "invalid" -> UserInfoReader.getRandomUser();
             default -> throw new IllegalArgumentException("No UserInfo file for '%s' status".formatted(userStatus));
         };
     }

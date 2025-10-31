@@ -1,12 +1,12 @@
 {
   "username": "JohnDoe12",
   "email": "JhonDoe.1999@example.com",
+  "password": "password_333",
   "signupInfo": {
     "firstName": "John",
     "lastName": "Doe",
     "dateOfBirth": "1999-09-10",
     "genderTitle": "MALE",
-    "password": "ship.duck.2001",
     "company": "Example",
     "address": "Example 123",
     "country": "UNITED_STATES",
