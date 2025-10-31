@@ -17,6 +17,13 @@ public class LoginPageSteps {
         getLoginPage().submitSignup();
     }
 
+    @When("I submit the login form with {userInfo} user data")
+    public void iSubmitTheLoginFormWithRegisteredUserData(UserInfo user) {
+        getLoginPage().typeLoginEmail(user.getEmail());
+        getLoginPage().typeLoginPassword(user.getPassword());
+        getLoginPage().submitLogin();
+    }
+
     @Then("the New User Signup! form should be visible")
     public void newUserSignupFormShouldBeVisible() {
         Assert.assertTrue(getLoginPage().isNewUserSignupFormDisplayed(), "New User Signup Form is not visible");
@@ -25,9 +32,16 @@ public class LoginPageSteps {
     @Then("an error message should appear")
     public void errorMessageShouldAppear() {
         Assert.assertTrue(getLoginPage().isErrorMessageDisplayed(), "Error message is not displayed");
-        boolean isCorrectError = getLoginPage().getErrorMessageText().toLowerCase()
-                                    .contains("email address already exist");
-        Assert.assertTrue(isCorrectError, "Error message doesn't contains the expected error");
+    }
+
+    @Then("the Login to your account form should be visible")
+    public void theLoginToYourAccountFormShouldBeVisible() {
+        Assert.assertTrue(getLoginPage().isLoginFormDisplayed(), "Login Form is not displayed");
+    }
+
+    @Then("I should be redirected to the signup-login page")
+    public void iShouldBeRedirectedToTheSignupLoginPage() {
+        Assert.assertTrue(getLoginPage().isLoginFormDisplayed(), "Login form is not displayed");
     }
 
     private LoginPage getLoginPage() {

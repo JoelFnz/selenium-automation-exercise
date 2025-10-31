@@ -1,7 +1,4 @@
 Feature: Register User
-  As user
-  I want to create an account
-  to gain access to the application
 
   Scenario: Successful Register
     When I click the Signup-Login button

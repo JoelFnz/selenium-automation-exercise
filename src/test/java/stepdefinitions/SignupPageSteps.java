@@ -12,7 +12,7 @@ public class SignupPageSteps {
 
     @When("I submit the Enter Account Information form with {userInfo} user data")
     public void iFillEnterAccountInfoForm(UserInfo user) {
-        getSignupPage().getAccountForm().typePassword(user.getSignupInfo().getPassword());
+        getSignupPage().getAccountForm().typePassword(user.getPassword());
         getSignupPage().getAccountForm().selectGenderTitle(user.getSignupInfo().getGenderTitle());
         getSignupPage().getAccountForm().selectDateOfBirth(user.getSignupInfo().getDateOfBirth());
         getSignupPage().getAccountForm().clickNewsletterChb();
